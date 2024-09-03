@@ -1,0 +1,854 @@
+
+
+/*
+
+Author: Rasel Srz
+Author URI: https://facebook.com/raselsrz73
+version: 1.0
+Date: 2024-09-02
+
+
+*/
+
+
+
+
+
+
+
+/*=============================
+	1. Google Fonts
+===============================*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap');
+
+/*=============================
+	01. Variable CSS start
+===============================*/
+
+:root {
+	--font-family: "Bricolage Grotesque", sans-serif;
+	--primary: #4770FF;
+	--black: #1A1F2C;
+	--light-black: #576076;
+	--white: #ffffff;
+	--dark-theme-bg: #000;
+	--dark-theme-black: #0E1018;
+	--dark-theme-white: #f0f2f5;
+	--dark-theme-light-white: rgba(240, 242, 245, 0.7);
+	--paragraph: #616670;
+	--background: #F0F2F5;
+	--font-size: 16px;
+	--font-weight: 400;
+	--line-height: 1.6em;
+	--transision: all 0.1s ease-out 0s;
+	--border: #DBDFE5;
+}
+
+/*=============================
+	02. Common CSS start
+===============================*/
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	list-style: none;
+	text-decoration: none;
+}
+
+body {
+	font-family: var(--font-family);
+	font-weight: var(--font-weight);
+	font-size: var(--font-size);
+	line-height: var(--line-height);
+	color: var(--black);
+	overflow-x: hidden;
+	padding: 24px 0 24px 0;
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+span,
+small {
+	display: inline-block;
+}
+
+a,
+button {
+	-webkit-transition: all 0.1s ease-out 0s;
+	-moz-transition: all 0.1s ease-out 0s;
+	-ms-transition: all 0.1s ease-out 0s;
+	-o-transition: all 0.1s ease-out 0s;
+	transition: all 0.1s ease-out 0s;
+	text-decoration: none;
+}
+
+a:focus,
+.btn:focus,
+button:focus {
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+}
+
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+	line-height: var(--line-height);
+	color: var(--paragraph);
+	margin: 0;
+	padding: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+*::-moz-selection {
+	background: var(--primary);
+	color: var(--white);
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: var(--primary);
+	color: var(--white);
+	text-shadow: none;
+}
+
+::selection {
+	background: var(--primary);
+	color: var(--white);
+	text-shadow: none;
+}
+
+
+/*=============================
+	header CSS start
+===============================*/
+
+header{
+	width: 100%;
+}
+
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+	margin-bottom: 25px;
+}
+
+.logo img {
+    height: 90px;
+}
+
+.search-nav {
+    display: flex;
+    align-items: center;
+}
+
+.search-nav nav .nav-item {
+	position: relative;
+    margin-right: 80px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 16px;
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.search-nav nav .nav-item::before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    transform: translateY(-50%);
+    color: #000;
+    height: 5px;
+    width: 100%;
+    background: red;
+}
+
+.search-nav form {
+    display: flex;
+    align-items: center;
+	position: relative;
+}
+
+.search-nav input {
+	background-color: #000000;
+	width: 450px;
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+	padding-left: 40px;
+}
+
+.search-nav input::placeholder {
+    margin-left: 30px;
+	color: #fff;
+}
+
+.search-nav button {
+	position: absolute;
+    padding: 5px 10px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart {
+	color: #000000;
+    margin-right: 35px;
+    font-size: 20px;
+	position: relative;
+}
+
+.cart span {
+	font-size: 14px;
+    position: absolute;
+    top: -10px;
+    left: 11px;
+    background-color: red;
+    color: #fff;
+    padding: 4px;
+    line-height: 9px;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    color: #000;
+	background-color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+	font-weight: 800;
+}
+
+
+.access-portal {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+	font-weight: 800;
+}
+
+.main-menu {
+    background-color: #000;
+    padding: 5px 20px;
+}
+
+.main-menu nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-menu nav ul li {
+    margin-right: 20px;
+}
+
+.main-menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar {
+	padding: 10px 20px;
+	position: relative;
+	width: 451px;
+}
+.sidebar ul{
+	margin-top: 15px;
+}
+
+.sidebar ul li a{
+	color: var(--black);
+	margin-bottom: 10px;
+}
+
+.sidebar ul .active::before {
+	content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 237px;
+    transform: translateY(-50%);
+    color: var(--black);
+    height: 35px;
+    width: 5px;
+    background: red;
+}
+
+
+.gap::before {
+	content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    /* left: 10px; */
+    /* top: 50px; */
+    transform: translateY(-50%);
+    color: var(--black);
+    height: 2px;
+    width: 150px;
+    background: #aaaaaa;
+}
+
+.gap{
+	margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.giftbar i{
+	color: #575757;
+	margin-left: 15px;
+}
+
+
+.content{
+	display: flex;
+    justify-content: flex-start;
+    align-items: self-start;
+}
+
+/* 
+.course-card{
+	padding: 10px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.card-list{
+	padding: 10px;
+}
+
+.card-list img{
+	max-width: 100%;
+	width: 50%;
+	height: 150px;
+} */
+
+
+
+
+
+
+
+/* Course Card Container */
+.course-card {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap */
+    justify-content: space-between; /* Spaces out the card lists */
+    gap: 20px; /* Adds space between each card */
+}
+
+.course-title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Individual Card Styles */
+.card-list {
+	position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fixed width for each card */
+    transition: transform 0.3s ease;
+    margin-bottom: 40px; /* Adds space below the card */
+    
+}
+
+.card-list:hover {
+    transform: translateY(-10px); /* Lifts the card up on hover */
+}
+
+/* Course Image */
+.course-card-img {
+    position: relative;
+    width: 100%;
+    height: 180px; /* Fixed height for image container */
+
+}
+
+.course-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+/* Play Icon */
+.payer-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50px;
+	height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Course Content */
+.course-card-content {
+    padding: 15px;
+}
+
+.title-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.title-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Price Styles */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price span {
+    color: #f70404;
+}
+
+.price del {
+    color: #999;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Button Styles */
+.buy-btn a {
+	position: static;
+    bottom: 10px;
+    right: 20px;
+    left: 20px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-btn a:hover {
+    background-color: #d60303;
+}
+
+.buy-btn a i{
+	margin-right: 10px;
+}
+
+/* Add to List Button */
+/* .add-list {
+	position: absolute;
+    left: 315px;
+    top: 675px;
+} */
+
+
+.add-list a {
+	position: absolute;
+    bottom: -45px;
+    font-weight: 800;
+    display: inline-block;
+    text-decoration: none;
+    color: red;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.title-content p {
+	font-size: 14px;
+	color: #666;
+	margin-top: 45px;
+	margin-bottom: 5px;
+}
+
+
+.price {
+	
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.price del {
+	color: red ;
+	margin-left: 10px;
+	font-size: 14px;
+	text-decoration: line-through;
+}
+
+.view-like{
+	color: #666;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .course-card {
+        justify-content: space-between; /* Better space distribution */
+    }
+
+    .card-list {
+        width: 45%; /* Slightly smaller cards to fit two in a row */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align the cards */
+    }
+
+    .card-list {
+        width: 80%; /* Cards take up more width */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-list {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .course-card-content {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .title-content h3 {
+        font-size: 16px; /* Smaller title font */
+    }
+
+    .title-content p {
+        font-size: 12px; /* Smaller description font */
+    }
+
+    .buy-btn a,
+    .add-list a {
+        padding: 8px 10px; /* Smaller button padding */
+        font-size: 14px; /* Smaller button font */
+    }
+
+    .payer-icon {
+        font-size: 20px; /* Smaller play icon */
+        padding: 8px; /* Smaller play icon padding */
+    }
+}
+
+
+/*=============================
+	footer CSS start
+===============================*/
+footer {
+	background-color: #000;
+	color: #fff;
+	padding: 20px 0;
+	position: absolute;
+    left: 0;
+    right: 0;
+	margin-top: 35px;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.footer-content a{
+	color: #fff;
+}
+
+.footer-content p {
+	font-size: 14px;
+}
+
+.footer-content .social-media {
+	display: flex;
+}
+
+
+.social-media a {
+	margin-right: 10px;
+	color: #fff;
+}
+
+.footer-logo img {
+	height: 50px;
+}
+
+
+
+
+
+.checkout-title{
+	display: flex;
+	justify-content: space-between;
+}
+
+.checkout-info{
+	border: 2px solid orange;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+.checkout-footer{
+	font-size: 13px;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+	gap: 20px;
+    background-color: #fff;
+}
+
+.checkout-form, .cart-summary {
+    width: 60%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+	position: relative;
+}
+
+.cart-item-details p{
+	font-size: 14px;
+}
+
+.title-price{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-price a,
+.title-price a i{
+	color: red;
+	margin-left: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+	justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.payment-methods{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+.payment-methods img{
+	max-width: 25%;
+}
+
+.payment-method label {
+    margin-right: 10px;
+}
+
+.payment-icons img {
+    width: 50px;
+    margin-left: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.expiration-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiration-cvv select, .expiration-cvv .cvv-input {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: #f70404;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #d60303;
+}
+
+.cart-summary h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: 50vh;
+}
+
+.cart-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.cart-item-details .discount {
+    color: red;
+    font-weight: bold;
+}
+
+.cart-item-details .discount  span{
+	text-decoration: line-through;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 18px;
+    /* color: #ffffff; */
+    background: #c3c3c3;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.total p{
+	color: #000;
+}
+
+
+.lines::before{
+	content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    /* left: 20px; */
+    /* right: 20px; */
+    top: 72%;
+    transform: translateY(-50%);
+    color: #eee;
+    height: 2px;
+    width: 90%;
+    background: #c3c3c3;
+}
